@@ -1,0 +1,889 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Special Elite', 'Courier New', monospace;  /*Tipo de tipografia para el body*/
+  background-color:black; /* Gris oscuro texturizado */
+  
+}
+
+h1,h3{
+  font-family: sans-serif; /* Busca una fuente sans-serif geométrica y gruesa */
+  text-transform: uppercase; /*Mayusculas*/
+  color: transparent; /*color interno transparente*/
+ -webkit-text-stroke: 3px #00e5ff; /*crea un contorno sólidoalrededor de cada letra de color cian*/
+ text-stroke: 2px #00e5ff; /*version compatible con otros navegadore*/
+  /* Simulamos el brillo del neón con sombras múltiples */
+  filter: drop-shadow(0 0 4px #00e5ff)  /*capa de desenfoque 4px*/
+          
+          
+}
+
+p {
+  font-weight: 300; /*grosor de la letras 400 es lo nomral */        
+  color: #e0e0e0;   /*color blanco con toque de gris*/        
+  margin-bottom: 15px; /*margen inferior de 15pixeles*/     
+}
+
+html {
+  scroll-behavior: smooth; /* Hace que el salto entre secciones sea animado */
+}
+
+
+/* -------------------------------------------------------------------------
+   HEADER Y MENÚ DE NAVEGACIÓN
+   ------------------------------------------------------------------------ */
+header {
+  background-color: black; /*color de fondo negro*/
+  padding: 15px 0px; /*margen interno de 15px para arriba y abajo o px a los lados*/
+  top: 0; /*borde superior*/
+  left: 0; /*borde alineado a la izquierda*/
+  width: 100%; /*ocupar el 100% de la pantalla*/
+  z-index: 7;  /*Capa 2  superior a las demas ,se superpone*/
+  position: fixed; /*posicion fija cuando el scroll baje*/
+  height: 120px;  /*Altura de 120px*/
+}
+
+header .contenedor {
+  display: flex; /*permite alinear el contenido y logo en una sola linea*/
+  justify-content: space-between; /*distribuye en 3 espacios, manda el logo izquierda y el contenido derecha*/
+  align-items: center; /*alineacion vertical del contenido y logo dentro del header*/
+  max-width: 1300px; /*ancho maximo de 1300 px*/
+  margin: 0 auto; /*margen arriba y abajo es de 0 , margen de los lados es automatico*/
+  padding: 0 40px; /*margen interno de arriba y abajo es de 0, margen de los lados es de 40px*/
+}
+
+header .contenedor .logo {
+  width: 90px;  /*ancho de logo de 90px*/
+  height: auto; /*altura automatico y proporcional*/
+  display: block; /*convierte como un bloque para mejor control*/
+  transition: transform 0.2s ease; /*tiempo de transicion de animación de logo de 0.2s*/
+}
+
+header .contenedor .logo:hover {
+  transform: scale(1.4); /* El logo crece un poco al pasar el mouse */
+}
+
+/* Estilo unificado para los enlaces del menú */
+nav a {
+  font-family: 'UnifrakturMaguntia', serif; /*estilo gotico de letras de tatuajes*/
+  font-size: 2.8rem; /*tamaño de la letra de 44.8 px*/                     
+  font-weight: bold; /*groso de la letra en Negrita*/                      
+  color: ghostwhite;  /*color de la letra*/                        
+  text-decoration: none; /*para quitar las subrayado que viene por defecto*/  
+  margin: 0px 30px;    /*margen de 0px arriba y abajo , a los lados un margen de 30px*/                    
+  display: inline-block; /*se comportan como bloques para que tenga mejor efecto los margenes*/
+  letter-spacing: 1px;  /*espacio entre las letras*/                   
+  transition: all 0.2s ease;/*tiempo de transicion de animación de las letras de 0.2s*/
+}
+
+/* Su respectivo hover justo debajo para mantener el orden */
+nav a:hover {
+    color: #fff; /* Las letras se vuelven blancas por dentro */
+    text-shadow:
+        0 0 5px #00e5ff,  /* Brillo cian cercano e intenso */
+        0 0 10px #00e5ff, /* Brillo medio */
+        0 0 20px #00e5ff, /* Brillo más lejano y suave */
+        0 0 40px #00e5ff; /* Un brillo final muy difuso */
+    
+    transition: text-shadow 0.2s ease;/*tiempo de transicion de animación de las letras de 0.2s*/
+    transform: translateY(-2px); /*permite dar el efecto que las letras se trasnladen arriba*/
+}
+
+/* --------------------------------------------------------------------------
+   SECCIONES Y PORTADA
+   --------------------------------------------------------------------------*/
+
+#inicio {
+  position: relative; /*permite mover todo lo que contiene la sección inicio*/
+  padding-top: 120px; /*un margen interno superior de 120x para que el banner se vea*/
+  overflow-x: hidden; /* Oculta cualquier scroll o desbordamiento horizontal */
+}
+
+@keyframes pulsarZoom {
+  0% {
+    transform: scale(1); /* Tamaño normal inicial */
+  }
+  25% {
+    transform: scale(1.02); /* Se hace mas grande  */
+  }
+  
+  50% {
+    transform: scale(1); /* regresa a la posicion inicial*/
+  }
+
+  75% {
+    transform: scale(0.9999); /* se hae mas pequeño*/
+  }
+
+  100% {
+    transform: scale(1); /* vuelve a la posicion normal */
+  }
+}
+
+
+#inicio img {
+  width: 100%;  /*se utiliza todo el ancho al 100% de la pantalla*/
+  height: 610px; /*su altura maxima de 610 px */
+  display: block; /*convierte la imagen en un bloque */
+  animation: pulsarZoom 10s ease-in-out infinite; /*animación de 10s con ciclo infinito*/
+
+}
+
+#inicio .Bloque-Inicio {
+  position: absolute;/*permite mover todo lo que contiene la div bloque-inicio*/
+  top: 18%; /*manda arriba */
+  left: 45%; /*posicion del alineamiento izquierda*/
+  width: 800px; /*ancho fijo de 800 px para las linea del texto*/
+  text-align: center; /*centra todo el contenido*/
+  transform: translateX(-50%,-50%); /*Mueve el bloque horizontalmente (en el eje X) un 15% hacia la izquierda*/
+}
+
+#inicio .Bloque-Inicio h1{
+font-size:80px; /*tamaño de letra 80px*/
+text-decoration: none; /*quitar cualquier decoración*/
+}
+
+#inicio .Bloque-Inicio h2{
+margin-top: -40px;  
+font-size:78px;
+text-decoration: none;
+color:transparent; /*color interno transparente*/
+font-family: sans-serif; /* Busca una fuente sans-serif geométrica y gruesa */
+text-transform: uppercase; /*Mayusculas*/
+ -webkit-text-stroke: 2px #00e5ff; /*crea un contorno sólidoalrededor de cada letra de color cian*/
+ text-stroke: 2px #00e5ff; /*version compatible con otros navegadore*/
+  /* Simulamos el brillo del neón con sombras múltiples */
+  filter: drop-shadow(0 0 4px #00e5ff)  /*capa de desenfoque 5px*/
+}
+
+#inicio .Bloque-Inicio p{
+
+  margin-left: 11px;
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 20px;   /*tamaño de letra 20*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */
+  text-transform: uppercase; /*mayusculas*/
+  color: #e0fbfc;      /* Un blanco con un sutil tinte cian/hielo */
+  opacity: 0.9;        /*opacidad*/
+  margin-bottom: 25px; /* Distancia  hacia el botón */
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+}
+
+#inicio .Agendar{
+
+display: inline-block; /* Esto hace que el botón se ajuste al contenido del texto */
+width: auto;           /* Evita que ocupe el 100% del ancho */
+padding: 12px 30px;    /* Espaciado interno: arriba/abajo y a los lados  12 arriba y abajo , 30 a los lados*/
+margin-top: 60px;      /*margen superior de 90 px*/
+margin-left: 5px;      /*margen izquierdo*/
+text-align: center;    /*alineamiento al centro*/
+text-decoration: none; /*sin decoraciones*/ 
+color:#00e5ff;         /*color cian*/
+background-color:transparent; /*sin fondo*/
+font-size: 30px;   /*tamaño 30px*/
+font-weight: bold; /*grosor negrito*/
+border-radius: 30px; /*borde tipo radio*/
+border: 2px solid #00e5ff; /*borde solido con color cian*/
+font-family: 'Montserrat', sans-serif; /*tipo de serigrafia */
+letter-spacing: 5px; /* separación entre letras */
+font-weight: 300; /*grosor de las letras*/
+text-transform: uppercase; /*hacer mayusculas*/
+transition: transform 0.2s ease; /*tiempo de transicion de animación de logo de 0.2s*/
+}
+
+#inicio .Agendar:hover{
+
+color:white;         /*color cian*/
+background-color:#00e5ff; /*sin fondo*/
+transform: scale(1.1); /*para que se haga mas grande cuando se pasa el mouse*/
+}
+
+/* --------------------------------------------------------------------------
+   Linea decorativa
+   --------------------------------------------------------------------------*/
+
+  .lineaDeco{
+  display: flex; /*convierte en elemento flexible para moverlo mejor*/
+  align-items: center; /*alineamiento vertical central*/
+  justify-content: center; /*alineamiento horizontal central*/
+  width: 100%; /*ocupa todo el ancho */
+  padding-block: 70px 0; /*un margen interno de 20px de arriba y abajo , 0 px de los lados*/
+  background-color:black;/*colo de fondo negro*/
+  box-sizing: border-box; /*evita que se desborde por fuera*/}
+
+  .lineaHorizontal{
+  flex-grow: 1; /*permite que crezca la linea */
+  height: 1px; /*grosor de linea*/
+  background-color: #00e5ff; /* Color cian/turquesa del botón */
+  max-width: 45%; /* Ajusta el largo de las líneas según prefieras */
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.6); /* Opcional: efecto brillante */
+}
+
+
+.punto {
+  width: 8px; /*ancho de 8px*/
+  height: 7px; /*grosor*/
+  background-color: #00e5ff; /*color cina*/
+  border-radius: 50%; /*borde redondeano*/
+  margin: 0 15px; /*margen de los lados 15px*/
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.8); /*efecto brillante*/
+}
+/* --------------------------------------------------------------------------
+   SECCION TRAYECTORIA
+   --------------------------------------------------------------------------*/
+
+#trayectoria {
+ padding: 40px 40px; /*margen interno de 60 arriba y abajo , y a los lados 40px*/
+ margin-top: 40px;
+ scroll-margin-top: 170px; /*permite que el scrool se posicione donde nosotros requerimos*/
+}
+
+
+#trayectoria img{
+width: 500px;
+height: 485px; /*su altura maxima de 610 px */
+object-fit: cover; /*redimenciona la imagen sin desfomarse */
+display: block; /*convierte la imagen en un bloque */
+border: 1px solid white;/*borde solido con color cian*/
+border-radius:20%; /*redondeo las esquinas un 20%*/
+transition: transform 0.2s ease,border 0.2s ease; /*tiempo de transicion de animación de logo de 0.2s*/
+flex-shrink: 0;    /* Evita que la imagen se deforme o encoja */
+}
+
+
+#trayectoria img:hover{
+
+transform: scale(1.05); /*para que se haga mas grande cuando se pasa el mouse*/
+border: 2px solid #00e5ff;
+    
+}
+
+#trayectoria .TrayectoriaTitulo {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px; /* Espacio entre el título y la fila de abajo */
+}
+
+#trayectoria .TrayectoriaTitulo h3{
+width: 100%;
+margin-top: 0;
+margin-bottom: 20px; /*margen interno de 45px*/  
+font-size:68px; /*tamaño de la letra es de 68px*/
+text-decoration: none; /*texto sin decoración*/
+color:transparent; /*color interno transparente*/
+font-family: sans-serif; /* Busca una fuente sans-serif geométrica y gruesa */
+text-transform: uppercase; /*Mayusculas*/
+ -webkit-text-stroke: 2px #00e5ff; /*crea un contorno sólidoalrededor de cada letra de color cian*/
+ text-stroke: 2px #00e5ff; /*version compatible con otros navegadore*/
+  /* Simulamos el brillo del neón con sombras múltiples */
+  filter: drop-shadow(0 0 4px #00e5ff);  /*capa de desenfoque 5px*/
+ display: inline-block;
+}
+
+
+#trayectoria .contenido{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alinea la foto y el texto verticalmente */
+  flex-wrap: nowrap; /*mantien en una sola linea sin importar que se desborde*/
+  gap: 50px; /* Separación entre la imagen y el bloque de texto */
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.parrafo1{
+
+display: flex;
+flex-direction:column;
+max-width: 700px;
+}
+
+.parrafo1 p{
+
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 19px;   /*tamaño de letra 19*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */
+  color: #e0fbfc;      /* Un blanco con un sutil tinte cian/hielo */
+  opacity: 0.9;        /*opacidad*/
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+  width: 650px;
+  text-align: left;             /* Cambiado a left para que el texto luzca ordenado a la der7cha */
+  margin-top: 10px;
+  transition: all 0.2s ease;
+
+}
+
+.parrafo1 p:hover{
+
+ color: #fff; /* Las letras se vuelven blancas por dentro */
+    text-shadow:
+        0 0 5px #00e5ff,  /* Brillo cian cercano e intenso */
+        0 0 10px #00e5ff, /* Brillo medio */
+        0 0 20px #00e5ff, /* Brillo más lejano y suave */
+        0 0 40px #00e5ff; /* Un brillo final muy difuso */
+    
+    transition: text-shadow 0.2s ease;/*tiempo de transicion de animación de las letras de 0.2s*/
+    transform: translateY(-2px); /*permite dar el efecto que las letras se trasnladen arriba*/
+}
+
+
+/* Versión para pantallas medianas o celulares (menores a 1024px) */
+@media (max-width: 1024px) {
+  #trayectoria .contenido {
+    flex-wrap: wrap; /* Permite que el texto baje debajo de la imagen en pantallas chicas */
+    justify-content: center;
+    text-align: center;
+  }
+
+  #trayectoria img {
+    width: 100%;     /* La imagen toma el ancho disponible del celular */
+    max-width: 450px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .parrafo1 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .parrafo1 p {
+    width: 100%;
+    text-align: center; /* Centra el texto en móviles para mejor estética */
+    font-size: 16px;    /* Letra un poco más pequeña para celulares */
+    letter-spacing: 2px;
+  }
+  
+  #trayectoria .TrayectoriaTitulo h3 {
+    font-size: 42px;    /* Reduce el título gigante para que no se salga de la pantalla */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECCION GALERIA
+   --------------------------------------------------------------------------*/
+   
+   #galeria {
+  padding: 10px 20px; /*margen interno de 10 arriba y abajo , y a los lados 20*/
+  margin-top: 10px;
+  scroll-margin-top: 170px;
+
+  }
+
+  #galeria .galeria9 h2{
+width: 100%;
+margin-top: 20;
+margin-bottom: 80px; /*margen interno de 70px*/  
+font-size:68px; /*tamaño de la letra es de 68px*/
+text-decoration: none; /*texto sin decoración*/
+color:transparent; /*color interno transparente*/
+font-family: sans-serif; /* Busca una fuente sans-serif geométrica y gruesa */
+text-transform: uppercase; /*Mayusculas*/
+ -webkit-text-stroke: 2px #00e5ff; /*crea un contorno sólidoalrededor de cada letra de color cian*/
+ text-stroke: 2px #00e5ff; /*version compatible con otros navegadore*/
+  /* Simulamos el brillo del neón con sombras múltiples */
+  filter: drop-shadow(0 0 4px #00e5ff);  /*capa de desenfoque 5px*/
+ display: inline-block;
+ text-align: center;
+}
+
+.imagenTattoo p{
+
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 21px;   /*tamaño de letra 19*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */
+  color: #e0fbfc;      /* Un blanco con un sutil tinte cian/hielo */
+  opacity: 0.9;        /*opacidad*/
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+  width: auto;
+  text-align: center;             /* Cambiado a left para que el texto luzca ordenado a la der7cha */
+  margin-top: 40px;
+  transition: all 0.2s ease;
+
+}
+
+.imagenTattoo p:hover{
+
+ color: #fff; /* Las letras se vuelven blancas por dentro */
+    text-shadow:
+        0 0 5px #00e5ff,  /* Brillo cian cercano e intenso */
+        0 0 10px #00e5ff, /* Brillo medio */
+        0 0 20px #00e5ff, /* Brillo más lejano y suave */
+        0 0 40px #00e5ff; /* Un brillo final muy difuso */
+    
+    transition: text-shadow 0.2s ease;/*tiempo de transicion de animación de las letras de 0.2s*/
+    transform: translateY(-2px); /*permite dar el efecto que las letras se trasnladen arriba*/
+}
+
+
+
+   #galeria .fila{
+    display: grid; /*convierte en cuadricula*/
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    grid-template-rows: repeat(3, auto);    /* 3 filas automáticas según el contenido */
+    gap: 30px 80px;                             /* Espacio de separación entre las tarjetas  filas y columnas*/
+    max-width: 1200px;                     /* Ancho máximo opcional para la galería */
+    margin: 0 auto;                        /* Centrar la galería en la pantalla */
+  }
+
+  .imagenTattoo img {
+    width: 100%;
+    height: 485px; /*su altura maxima de 610 px */
+    object-fit: cover; /*redimenciona la imagen sin desfomarse */
+    display: block; /*convierte la imagen en un bloque */
+    border: 1px solid white;/*borde solido con color cian*/
+    border-radius:20%; /*redondeo las esquinas un 20%*/
+    transition: transform 0.2s ease,border 0.2s ease; /*tiempo de transicion de animación de logo de 0.2s*/
+    flex-shrink: 0;    /* Evita que la imagen se deforme o encoja */   
+}
+
+.imagenTattoo img:hover{
+
+transform: scale(1.05); /*para que se haga mas grande cuando se pasa el mouse*/
+border: 2px solid #00e5ff;
+    
+}
+
+/* --------------------------------------------------------------------------
+   SECCION CONTACTO
+   --------------------------------------------------------------------------*/
+
+   #contacto {
+   width: 100%; 
+   padding: 0;
+   margin-top:20px;
+   overflow: hidden;
+   position: relative; /* Contenedor de referencia para los elementos absolutos */
+   height: 750px;
+   border-radius: 40px;
+   scroll-margin-top: 170px;
+   }
+
+
+   #contacto h2{
+    display: block;
+    width: 100%;
+   margin: 20px 0 10px 0;
+   padding: 10px 20px;
+  font-size:68px; /*tamaño de la letra es de 68px*/
+  text-decoration: none; /*texto sin decoración*/
+  color:transparent; /*color interno transparente*/
+  font-family: sans-serif; /* Busca una fuente sans-serif geométrica y gruesa */
+  text-transform: uppercase; /*Mayusculas*/
+ -webkit-text-stroke: 2px #00e5ff; /*crea un contorno sólidoalrededor de cada letra de color cian*/
+ text-stroke: 2px #00e5ff; /*version compatible con otros navegadore*/
+  /* Simulamos el brillo del neón con sombras múltiples */
+  filter: drop-shadow(0 0 4px #00e5ff);  /*capa de desenfoque 5px*/
+  display: inline-block;
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+#contacto .mapa {
+    position: absolute;
+    top: 150px;
+    left: 4%;
+    width: 92%;
+    height: 560px;
+    z-index: 1;
+    display: block;
+    border-radius: 40px ; 
+    border: 3px solid #00e5ff ; 
+    overflow: hidden ;     
+}
+
+#contacto .mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    border-radius: 37px; /* Evita que el iframe toque los bordes internos */
+}
+
+#contacto .formulario{
+    position: absolute;
+    top: 32%;
+    left: 65%;
+    z-index: 5; /* El formulario se sitúa por encima del mapa */
+    background: rgba(0, 0, 0, 0.75); /* Fondo semitransparente opcional para que los inputs resalten */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid white;
+    transition: transform 0.2s ease,border 0.2s ease;
+    max-width: 400px;
+    width: 100%;
+}
+
+#contacto .formulario:hover{
+transform: scale(1.05); /*para que se haga mas grande cuando se pasa el mouse*/
+border: 2px solid #00e5ff;
+}
+
+#contacto .formulario .casilla{
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 20px;   /*tamaño de letra 19*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */                 /* Tamaño de la letra */
+  color: black;                  /* Color del texto que escribes */
+  border-radius: 8px;
+  border: 1px solid white;
+ background:white;
+ width: 100%;       /* Obliga a ocupar todo el ancho del formulario */
+ padding: 12px 15px;/* Espacio interno para que no se vea aplastado */
+ box-sizing: border-box;
+}
+
+#contacto .formulario .casilla:hover{
+border: 2px solid #00e5ff; 
+}
+
+#contacto .formulario textarea{
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 20px;   /*tamaño de letra 19*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */                 /* Tamaño de la letra */
+  color: #00e5ff;                  /* Color del texto que escribes */
+  border-radius: 8px;
+  border: 1px solid white;
+ background:white;
+ width: 100%;       /* Ocupa todo el ancho */
+ height: 90px;      /* Altura fija para el mensaje */
+ padding: 12px 15px;
+ box-sizing: border-box;
+resize: none;
+}
+
+#contacto .formulario textarea:hover{
+border: 2px solid #00e5ff; 
+}
+
+#contacto .formulario .boton{
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 20px;   /*tamaño de letra 19*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */                 
+  color:#00e5ff;         /*color cian*/
+  background-color:transparent; /*sin fondo*/
+  font-weight: bold; /*grosor negrito*/
+  border-radius: 30px; /*borde tipo radio*/
+  border: 2px solid #00e5ff; /*borde solido con color cian*/
+ text-transform: uppercase; /*hacer mayusculas*/
+ transition: transform 0.2s ease; /*tiempo de transicion de animación de logo de 0.2s*/
+ padding: 6px 16px;       /* Relleno superior/inferior e izquierdo/derecho más pequeño */
+  width: auto;             /* Deja que el botón tome el tamaño según su texto, o usa un ancho fijo como max-width */
+  align-self: center;      /* Centra el botón si el formulario usa flexbox en columna */
+  cursor: pointer;
+}
+
+#contacto .formulario .boton:hover{
+color:white;         /*color cian*/
+background-color:#00e5ff; /*sin fondo*/
+transform: scale(1.1); /*para que se haga mas grande cuando se pasa el mouse*/
+}
+
+#contacto .formulario .casilla::placeholder,
+#contacto .formulario textarea::placeholder {
+    color: #00e5ff;          /* Color del texto de ayuda */
+    font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+    font-size: 20px;   /*tamaño de letra 19*/
+    letter-spacing: 4px; /* separación de letras */
+    font-weight: 400;    /* grosor de letras estandar */        
+}
+
+#contacto .formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   SECCION FOOTER
+   --------------------------------------------------------------------------*/
+
+   footer{
+    
+    position: relative;
+    width: 100%; 
+    text-align: center;
+
+   }
+
+   footer ul {
+   list-style: none;   
+   padding: 0;        
+   margin: 0;
+   padding-bottom: 10px;
+ }
+
+footer ul li {
+  margin-bottom: 15px; 
+}
+
+footer a {
+  text-decoration: none; 
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 21px;   /*tamaño de letra 19*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */
+  color: #e0fbfc;      /* Un blanco con un sutil tinte cian/hielo */
+  opacity: 0.9;        /*opacidad*/
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+  width: auto;
+  text-align: center;             /* Cambiado a left para que el texto luzca ordenado a la der7cha */
+  margin-top: 40px;
+  transition: all 0.2s ease;
+}
+
+footer a:hover{
+color: #fff; /* Las letras se vuelven blancas por dentro */
+    text-shadow:
+        0 0 5px #00e5ff,  /* Brillo cian cercano e intenso */
+        0 0 10px #00e5ff, /* Brillo medio */
+        0 0 20px #00e5ff, /* Brillo más lejano y suave */
+        0 0 40px #00e5ff; /* Un brillo final muy difuso */
+    
+    transition: text-shadow 0.2s ease;/*tiempo de transicion de animación de las letras de 0.2s*/
+    transform: translateY(-2px); /*permite dar el efecto que las letras se trasnladen arriba*/
+
+
+}
+
+
+/* Al pasar el mouse por el enlace, forzamos el color cian al icono FontAwesome */
+footer a:hover i.fa-solid,
+footer a:hover i.fa-brands,
+footer a:hover .fa-envelope,
+footer a:hover .fa-square-whatsapp,
+footer a:hover .fa-location-dot,
+footer a:hover .fa-facebook {
+  color: #00e5ff !important; /* Las letras/iconos se vuelven blancos por dentro */
+  text-shadow:
+      0 0 5px #00e5ff,  /* Brillo cian cercano e intenso */
+      0 0 10px #00e5ff, /* Brillo medio */
+      0 0 20px #00e5ff, /* Brillo más lejano y suave */
+      0 0 40px #00e5ff !important; /* Un brillo final muy difuso */
+    
+  transition: all 0.2s ease; /* Tiempo de transición suave */
+  transform: translateY(-2px) !important; /* Efecto de traslación hacia arriba */
+}
+
+.barraFooter {
+  width: 100%;
+  text-decoration: none; 
+  font-family: 'Montserrat', sans-serif; /*tipo de letra*/
+  font-size: 21px;   /*tamaño de letra 19*/
+  letter-spacing: 4px; /* separación de letras */
+  font-weight: 400;    /* grosor de letras estandar */
+  color: #e0fbfc;      /* Un blanco con un sutil tinte cian/hielo */
+  opacity: 0.9;        /*opacidad*/
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+  text-align: center;  
+  padding-top: 15px;
+  padding-bottom: 20px;
+  border-top: 1px dashed rgba(0, 229, 255, 0.15); /* Línea divisoria elegante */
+  position: static; /* Quitamos el absolute que lo ocultaba */
+}
+
+.barraFooter:hover{
+
+color: #fff; /* Las letras se vuelven blancas por dentro */
+    text-shadow:
+        0 0 5px #00e5ff,  /* Brillo cian cercano e intenso */
+        0 0 10px #00e5ff, /* Brillo medio */
+        0 0 20px #00e5ff, /* Brillo más lejano y suave */
+        0 0 40px #00e5ff; /* Un brillo final muy difuso */
+    
+    transition: text-shadow 0.2s ease;/*tiempo de transicion de animación de las letras de 0.2s*/
+    transform: translateY(-2px); /*permite dar el efecto que las letras se trasnladen arriba*/
+}
+
+
+/* --------------------------------------------------------------------------
+   PARA DISPOSITIVOS MÓVILES Y PANTALLAS PEQUEÑAS
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  /* 1. Header fluido y compacto */
+  header {
+    height: auto;
+    padding: 8px 0;
+    position: relative;
+  }
+
+  header .contenedor {
+    flex-direction: row;
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+
+  header .contenedor .logo {
+    width: 60px;
+  }
+
+  nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    max-width: 82% !important;
+  }
+
+  nav a {
+    font-size: 0.75rem !important; /* Letra más pequeña y fluida para que los textos no se rompan */
+    margin: 0 2px !important;
+    letter-spacing: 0px !important;
+    display: inline-block !important;
+  }
+
+  /* 2. Sección de inicio estirada al 100% de la pantalla */
+  #inicio {
+    position: relative;
+    padding-top: 0;
+    width: 100%;
+  }
+
+  #inicio img {
+    width: 100% !important;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  #inicio .Bloque-Inicio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  #inicio .Bloque-Inicio h1 {
+    font-size: 28px;
+  }
+
+  #inicio .Bloque-Inicio h2 {
+    font-size: 26px;
+    margin-top: -10px;
+  }
+
+  #inicio .Bloque-Inicio p {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  #inicio .Agendar {
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+
+  /* 3. Corrección para la sección Galería en móvil */
+  #galeria {
+    padding: 10px 10px !important;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  #galeria .fila {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 30px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .imagenTattoo {
+    width: 90% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .imagenTattoo img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .imagenTattoo p {
+    font-size: 16px !important;
+    letter-spacing: 2px !important;
+    margin-top: 15px !important;
+  }
+
+  #galeria .galeria9 h2 {
+    font-size: 38px !important;
+    margin-bottom: 30px !important;
+  }
+
+  /* 4. Corrección para la sección Contacto y Mapa en móvil */
+  #contacto {
+    height: auto !important;
+    padding: 20px 10px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+  }
+
+  #contacto h2 {
+    font-size: 38px !important;
+    margin-bottom: 25px !important;
+    text-align: center;
+  }
+
+  /* El formulario va primero con espacio inferior hacia el mapa */
+  #contacto .formulario {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95% !important;
+    max-width: 100% !important;
+    margin: 0 auto 30px auto !important; /* Margen inferior de 30px para separar del mapa */
+  }
+
+  /* El mapa se coloca debajo con su propio espacio limpio */
+  #contacto .mapa {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95% !important;
+    height: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  /* 5. Ajustes para el Footer en móvil para que no se vea amontonado */
+  footer {
+    padding: 40px 15px 20px 15px !important;
+  }
+
+  footer ul li {
+    margin-bottom: 20px !important;
+  }
+
+  footer a, .barraFooter {
+    font-size: 16px !important; /* Letra un poco más cómoda para pantallas chicas */
+    letter-spacing: 2px !important;
+    margin-top: 20px !important;
+  }
+}
